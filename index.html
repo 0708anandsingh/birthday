@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Mantasha Sister 🎂</title>
+<style>
+/* Reset & fonts */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow-x:hidden}
+body{
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg,#fff7fb 0%, #fff0f3 50%, #ffeef6 100%);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  position:relative;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1200;background: linear-gradient(90deg,#ff6fa0,#ff9aa2);padding:12px 0;box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+.nav .container{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.brand{color:#fff;font-weight:800;letter-spacing:0.2px}
+.menu{display:flex;gap:12px}
+.menu a{
+  color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:700;
+  transition: transform .18s ease, background .18s ease;
+}
+.menu a:hover{transform:translateY(-3px);background:rgba(255,255,255,0.08)}
+
+/* HERO */
+.hero{max-width:1100px;margin:28px auto;padding:30px;border-radius:22px;background:
+linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));box-shadow:0 12px 40px rgba(24,12,48,0.06);display:flex;gap:24px;align-items:center;padding-left:36px;padding-right:36px;position:relative;}
+.hero-left{flex:1}
+.hero h1{font-size:2.1rem;color:#ff2f6d;margin-bottom:8px}
+.hero p{color:#444;line-height:1.6;margin-bottom:12px}
+.hero .small-shayari{font-style:italic;color:#8b3d53;background:linear-gradient(90deg,#fff0f3,transparent);padding:12px;border-radius:12px;display:inline-block}
+
+.hero-right{width:260px;display:flex;flex-direction:column;gap:12px;align-items:center;position:relative;}
+.photo-wrap{width:100%;border-radius:16px;overflow:hidden;border:6px solid rgba(255,111,146,0.08)}
+.photo-wrap img{display:block;width:100%;height:260px;object-fit:cover}
+
+/* cake animation */
+.cake{position:absolute;bottom:-10px;right:10px;width:120px;animation:bounce 1.8s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* sections */
+section{max-width:1100px;margin:26px auto;padding:18px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 8px 30px rgba(10,10,20,0.05);margin:12px 0}
+h2{color:#ff4f80;margin-bottom:14px}
+
+/* messages */
+.msgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.msg{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff7fb);border:1px solid rgba(255,111,146,0.06)}
+.msg strong{display:block;margin-bottom:8px;color:#b02b53}
+
+/* about */
+.about p{line-height:1.65;color:#444}
+.about .shayari{margin-top:12px;font-style:italic;color:#8b3d53;padding:12px;border-left:4px solid rgba(255,111,146,0.14);background:rgba(255,240,247,0.6);border-radius:8px}
+
+/* gallery */
+.gallery{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.gallery img{width:220px;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 10px 30px rgba(20,10,30,0.08);transition:transform .25s}
+.gallery img:hover{transform:translateY(-6px) scale(1.03);cursor:pointer}
+
+/* surprise button */
+.surprise-wrap{text-align:center;padding:36px}
+.surprise-btn{background:linear-gradient(90deg,#ff6fa0,#ff9aa2);color:#fff;border:0;padding:14px 28px;border-radius:999px;font-weight:800;font-size:1.05rem;cursor:pointer;box-shadow:0 12px 30px rgba(255,111,146,0.18);transition:transform .18s}
+.surprise-btn:hover{transform:translateY(-4px)}
+
+/* popup */
+.popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;z-index:1400;padding:18px}
+.popup-card{background:#fff;padding:26px;border-radius:14px;max-width:640px;box-shadow:0 20px 60px rgba(0,0,0,0.35);text-align:left}
+.popup-card h3{color:#ff2f6d;margin-bottom:8px}
+.popup-card .shayari{font-style:italic;color:#7a3650;padding:12px;border-left:3px solid rgba(255,111,146,0.12);background:linear-gradient(90deg,#fff0f3,#fff)}
+
+/* footer */
+footer{text-align:center;padding:22px;color:#6b5862;font-size:14px}
+
+/* balloons */
+.balloon{position:absolute;width:40px;height:60px;background:red;border-radius:50%;animation:float 6s infinite ease-in-out;opacity:0.85;z-index:0;}
+.balloon:nth-child(2){background:yellow;left:10%;animation-delay:1s;}
+.balloon:nth-child(3){background:blue;left:30%;animation-delay:2s;}
+.balloon:nth-child(4){background:pink;left:50%;animation-delay:3s;}
+.balloon:nth-child(5){background:green;left:70%;animation-delay:4s;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-50px);}100%{transform:translateY(0);}}
+
+@media(max-width:900px){.hero{flex-direction:column;align-items:flex-start}.hero-right{width:100%}.hero-right .photo-wrap img{height:200px}.gallery img{width:46%;height:180px}}
+@media(max-width:520px){.gallery img{width:100%;height:220px}h1{font-size:1.6rem}}
+
+</style>
+</head>
+<body>
+
+<!-- balloons -->
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+
+<!-- background music -->
+<audio autoplay loop>
+  <source src="happy_birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="container">
+    <div class="brand">Happy Birthday — <strong>Mantasha Sister</strong></div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#messages">Messages</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#surprise">Surprise</a>
+      <a href="ecard.html" style="background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:10px">Download E-Card</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO / HOME -->
+<main id="home" class="hero">
+  <div class="hero-left">
+    <h1>🎉 Happy Birthday, Mantasha Sister 🎂</h1>
+    <p>Today we celebrate your light, kindness, and joy. May your year ahead overflow with love, laughter, and memories you cherish forever.</p>
+
+    <div class="small-shayari">
+      <strong>Shayari:</strong>
+      <div style="margin-top:6px">
+        “Zindagi ki har subah ho tumse roshan,  
+        har pal ho khushiyon se tumhara armaan.”
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-wrap card">
+      <img src="1.jpg" alt="Mantasha">
+    </div>
+    <img src="cake.png" class="cake" alt="Birthday Cake">
+  </div>
+</main>
+
+<!-- MESSAGES -->
+<section id="messages">
+<h2>💌 Messages & Quotes</h2>
+<div class="card msgs">
+<div class="msg"><strong>Anand (Your Brother)</strong><div>Happy Birthday, Mantasha! You are one of the brightest parts of my life. Thank you for your laughter and endless support.</div></div>
+<div class="msg"><strong>Heartfelt Shayari</strong><div>“Teri muskurahat se roshan ho meri duniya, tere honthon pe sada rahe khushi ki guftagu. Janamdin mubarak ho, meri pyari behna.”</div></div>
+<div class="msg"><strong>English Quote</strong><div>“A sister is both your mirror — and your opposite.” — Elizabeth Fishel</div></div>
+<div class="msg"><strong>Brother Promise</strong><div>I promise to always support you, to laugh with you, and to be there whenever you need me. Love you, sister.</div></div>
+<div class="msg"><strong>Short Shayari</strong><div>“Har khushi ho tumhari, har dua mein ho tera naam — Janamdin mubarak ho, sada khilte rahe tera har ek armaan.”</div></div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>🌸 About Mantasha</h2>
+<div class="card about">
+<p>Mantasha, you bring calm and warmth wherever you go. Your smile lifts heavy days and your care makes everyone feel safe. I'm grateful for every moment we've shared. You're my sister in heart.</p>
+<div class="shayari">“Tere saath beetey pal mere hamesha yaad rahenge, tu rahe khush to meri duniya bhi sukoon paayegi. Janamdin mubarak, meri pyari Mantasha.”</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>📸 Memories</h2>
+<div class="card gallery">
+<img src="1.jpg" alt="Memory 1" onclick="openImage(this.src)">
+<img src="2.jpg" alt="Memory 2" onclick="openImage(this.src)">
+<img src="3.jpg" alt="Memory 3" onclick="openImage(this.src)">
+</div>
+</section>
+
+<!-- SURPRISE -->
+<section id="surprise">
+<h2>🎁 Special Surprise</h2>
+<div class="card surprise-wrap">
+<button class="surprise-btn" onclick="openPopup()">Open Heartfelt Surprise</button>
+</div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+<div class="popup-card">
+<h3>💖 Dear Mantasha 💖</h3>
+<div class="shayari">“Roshni ban kar tu chalti rahe zindagi mein, muskurahat ban kar tu chamakti rahe har pal. Tere har sapne ko mile poori udaan, janamdin mubarak ho — sada khush rahe tu har hal.”</div>
+<p style="margin-top:12px;color:#4b3a45">You are loved more than words can say. May this new year bring you reasons to smile every day. Always with you — your brother, Anand.</p>
+<div style="text-align:right;margin-top:14px"><button class="close-btn" onclick="closePopup()" style="background:#ff6fa0;color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer">Close</button></div>
+</div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:1500">
+<img id="lightbox-img" src="" alt="Preview" style="max-width:92%;max-height:92%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)">
+</div>
+
+<footer>Made with ❤️ by Anand — Wishing you a joyful birthday, Mantasha.</footer>
+
+<script>
+// POPUP
+const popup=document.getElementById('popup');
+function openPopup(){popup.style.display='flex';spawnConfetti(40);}
+function closePopup(){popup.style.display='none';}
+
+// IMAGE LIGHTBOX
+const lightbox=document.getElementById('lightbox');
+const lbImg=document.getElementById('lightbox-img');
+function openImage(src){lbImg.src=src;lightbox.style.display='flex';}
+lightbox.addEventListener('click',()=>lightbox.style.display='none');
+
+// CONFETTI
+function spawnConfetti(count=36){
+  const colors=['#ff6fa0','#ffd166','#06d6a0','#118ab2','#ff80ab'];
+  for(let i=0;i<count;i++){
+    const el=document.createElement('div');
+    el.className='confetti';
+    el.style.left=(Math.random()*100)+'vw';
+    el.style.top=(-10-Math.random()*20)+'px';
+    el.style.width=(6+Math.random()*10)+'px';
+    el.style.height=(8+Math.random()*12)+'px';
+    el.style.background=colors[Math.floor(Math.random()*colors.length)];
+    el.style.opacity=0.95;
+    el.style.transform=`rotate(${Math.random()*360}deg)`;
+    el.style.position='fixed';
+    el.style.borderRadius='3px';
+    el.style.zIndex='1300';
+    el.style.pointerEvents='none';
+    el.style.animation=`floatConfetti ${3+Math.random()*3}s ease-in-out forwards`;
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8000);
+  }
+}
+document.styleSheets[0].insertRule('@keyframes floatConfetti {0%{transform:translateY(0)}100%{transform:translateY(80vh)}}',0);
+spawnConfetti(50);
+</script>
+
+</body>
+</html>
