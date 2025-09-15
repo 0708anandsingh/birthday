@@ -4,126 +4,84 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Mantasha Birthday E-Card</title>
-<!-- jsPDF for PDF generation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
-  body{
-    display:flex;align-items:center;justify-content:center;height:100vh;margin:0;
-    background: linear-gradient(135deg, #fff0f3, #ffe7f0, #fff7fb);
-    font-family: "Segoe UI", Arial, sans-serif;
-    overflow: hidden;
-    position: relative;
-  }
+  /* Reset & basic */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI", Arial, sans-serif; background: linear-gradient(135deg,#fff0f3,#ffe7f0,#fff7fb); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:10px; position:relative; overflow-x:hidden;}
 
-  /* floating decorations */
-  .balloon, .flower{
-    position: absolute;opacity:0.9;
-    animation: float 6s ease-in-out infinite;
-    z-index:0;
-  }
-  .balloon{width:40px;height:60px;border-radius:50%;background:red;}
-  .flower{width:30px;height:30px;background:yellow;border-radius:50%;}
+  /* Floating decorations */
+  .balloon{position:absolute;width:6vw;max-width:40px;height:10vh;max-height:60px;border-radius:50%;opacity:0.85; animation:float 6s ease-in-out infinite; z-index:0;}
+  .balloon:nth-child(1){left:5%; animation-delay:0s;background:red;}
+  .balloon:nth-child(2){left:20%; animation-delay:1s;background:orange;}
+  .balloon:nth-child(3){left:40%; animation-delay:2s;background:pink;}
+  .balloon:nth-child(4){left:60%; animation-delay:3s;background:blue;}
+  .balloon:nth-child(5){left:80%; animation-delay:4s;background:green;}
+  @keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-5vh);}100%{transform:translateY(0);}}
 
-  .balloon:nth-child(1){left:5%;animation-delay:0s;}
-  .balloon:nth-child(2){left:20%;animation-delay:1s;background:orange;}
-  .balloon:nth-child(3){left:40%;animation-delay:2s;background:pink;}
-  .balloon:nth-child(4){left:60%;animation-delay:3s;background:blue;}
-  .balloon:nth-child(5){left:80%;animation-delay:4s;background:green;}
+  /* Card */
+  .card{background: linear-gradient(180deg,#fff0f3,#ffe7f0,#fff7fb); padding:5vw; border-radius:2vw; box-shadow:0 0.8rem 3rem rgba(0,0,0,0.12); max-width:90vw; text-align:center; position:relative; z-index:1;}
 
-  @keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-50px);}
-    100%{transform:translateY(0);}
-  }
+  h1{color:#ff2f6d; font-size:6vw; margin-bottom:2vw; text-shadow:1px 1px 3px #ffccd9;}
+  .cake-icon{font-size:12vw; margin:2vw 0; animation:bounce 1.8s infinite;}
+  @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-2vh);}}
 
-  .card{
-    background: linear-gradient(180deg, #fff0f3 0%, #ffe7f0 100%);
-    padding:40px; border-radius:18px; box-shadow:0 14px 50px rgba(0,0,0,0.12);
-    max-width:750px;text-align:center; position:relative; z-index:1;
-  }
-  h1{
-    color:#ff2f6d;margin-bottom:12px;font-size:2rem;
-    text-shadow: 1px 1px 3px #ffccd9;
-  }
-  p{
-    color:#5b3b45;line-height:1.6;margin-bottom:18px;
-    font-size:1.1rem;
-  }
-  .shayari{
-    font-style:italic;color:#b02b53;background:rgba(255,240,247,0.7);
-    padding:12px;margin:12px 0;border-radius:12px;border-left:4px solid #ff6fa0;
-    text-align:center;
-  }
-  .btn{
-    margin:10px 6px; /* space between buttons */
-    background:linear-gradient(90deg,#ff6fa0,#ff9aa2);
-    color:#fff;padding:12px 20px;border-radius:12px;border:0;cursor:pointer;
-    font-weight:700;font-size:1rem;transition: transform .2s;
-    text-decoration:none;
-    display:inline-block;
-  }
+  p{color:#5b3b45; line-height:1.6; font-size:4vw; margin-bottom:3vw;}
+  .shayari{font-style:italic;color:#b02b53; background:rgba(255,240,247,0.7); padding:3vw; margin:2vw 0; border-radius:2vw; border-left:0.5vw solid #ff6fa0; text-align:center; font-size:3.5vw;}
+
+  /* Buttons */
+  .btn{margin:2vw 1vw; background:linear-gradient(90deg,#ff6fa0,#ff9aa2); color:#fff; padding:3vw 5vw; border-radius:2vw; border:0; cursor:pointer; font-weight:700; font-size:4vw; text-decoration:none; display:inline-block; transition: transform .2s;}
   .btn:hover{transform:translateY(-3px);}
 
-  /* cake icon */
-  .cake-icon{
-    font-size:3rem;margin:12px 0;
-    animation: bounce 1.8s infinite;
+  /* Responsive adjustments */
+  @media(max-width:400px){
+    h1{font-size:7vw;}
+    .cake-icon{font-size:14vw;}
+    p{font-size:5vw;}
+    .shayari{font-size:4vw; padding:4vw;}
+    .btn{font-size:5vw; padding:4vw 6vw;}
   }
-  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-
 </style>
 </head>
 <body>
 
-<!-- Floating decorations -->
+<!-- Decorations -->
 <div class="balloon"></div>
 <div class="balloon"></div>
 <div class="balloon"></div>
 <div class="balloon"></div>
 <div class="balloon"></div>
 
+<!-- E-Card -->
 <div class="card">
-  <h1>🎂 Happy Birthday, Mantasha Sister 🎉</h1>
+  <h1>🎉 Happy Birthday, Mantasha Sister 🎂</h1>
   <div class="cake-icon">🎂✨</div>
-  <p>Dear Mantasha —<br>
-    On this special day, I wish you endless smiles, sparkling dreams fulfilled, and moments that warm your heart.  
-    Thank you for being the amazing person you are. — With love, Anand 💖
-  </p>
 
-  <div class="shayari">
-    “Zindagi ki har subah ho tumse roshan, <br>
-    Har pal ho khushiyon se tumhara armaan.”
-  </div>
+  <p>Dear Mantasha — On this special day, I wish you endless smiles, sparkling dreams fulfilled, and moments that warm your heart. Thank you for being the amazing person you are. — With love, Anand 💖</p>
 
-  <div class="shayari">
-    “Tere saath beetey pal mere hamesha yaad rahenge, <br>
-    Tu rahe khush to meri duniya bhi sukoon paayegi. <br>
-    Janamdin mubarak, meri pyari Mantasha Bahan.”
-  </div>
-
+  <div class="shayari">“Zindagi ki har subah ho tumse roshan, <br> Har pal ho khushiyon se tumhara armaan.”</div>
+  <div class="shayari">“Tere saath beetey pal mere hamesha yaad rahenge, <br> Tu rahe khush to meri duniya bhi sukoon paayegi. <br> Janamdin mubarak, meri pyari Mantasha Bahan.”</div>
   <p>“Sisters are flowers from the same garden — may your bloom shine forever.” 🌸</p>
 
   <!-- Buttons -->
   <div>
-    <button class="btn" id="savePDF">Download Printable E-Card (PDF)</button>
+    <button class="btn" id="savePDF">Download E-Card (PDF)</button>
     <a class="btn" href="index.html">🏠 Home Page</a>
   </div>
 </div>
 
 <script>
-document.getElementById('savePDF').addEventListener('click', ()=>{
+document.getElementById('savePDF').addEventListener('click', ()=> {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({unit:'pt', format:'a4'});
   doc.setFillColor(255,245,250);
   doc.rect(0,0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
 
-  // Title
   doc.setFont('helvetica','bold');
   doc.setFontSize(28);
   doc.setTextColor(200,35,90);
   doc.text("🎂 Happy Birthday, Mantasha Sister 🎉", 40, 80);
 
-  // Shayari & wishes
   doc.setFont('helvetica','normal');
   doc.setFontSize(14);
   doc.setTextColor(60,40,45);
@@ -142,7 +100,6 @@ document.getElementById('savePDF').addEventListener('click', ()=>{
     "With love, Anand 💖"
   ];
   doc.text(lines, 40, 120, { maxWidth: 520, lineHeightFactor: 1.5 });
-
   doc.save("Mantasha_Sister_Birthday_Card.pdf");
 });
 </script>
