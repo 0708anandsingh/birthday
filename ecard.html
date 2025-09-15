@@ -55,9 +55,12 @@
     text-align:center;
   }
   .btn{
-    margin-top:18px;background:linear-gradient(90deg,#ff6fa0,#ff9aa2);
+    margin:10px 6px; /* space between buttons */
+    background:linear-gradient(90deg,#ff6fa0,#ff9aa2);
     color:#fff;padding:12px 20px;border-radius:12px;border:0;cursor:pointer;
     font-weight:700;font-size:1rem;transition: transform .2s;
+    text-decoration:none;
+    display:inline-block;
   }
   .btn:hover{transform:translateY(-3px);}
 
@@ -100,7 +103,11 @@
 
   <p>“Sisters are flowers from the same garden — may your bloom shine forever.” 🌸</p>
 
-  <button class="btn" id="savePDF">Download Printable E-Card (PDF)</button>
+  <!-- Buttons -->
+  <div>
+    <button class="btn" id="savePDF">Download Printable E-Card (PDF)</button>
+    <a class="btn" href="index.html">🏠 Home Page</a>
+  </div>
 </div>
 
 <script>
@@ -130,7 +137,7 @@ document.getElementById('savePDF').addEventListener('click', ()=>{
     "",
     "Tere saath beetey pal mere hamesha yaad rahenge,",
     "Tu rahe khush to meri duniya bhi sukoon paayegi.",
-    "Janamdin mubarak, meri pyari Mantasha Bahan.",
+    "Janamdin mubarak, meri pyari Mantasha.",
     "",
     "With love, Anand 💖"
   ];
